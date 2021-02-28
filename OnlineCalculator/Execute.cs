@@ -98,7 +98,6 @@ namespace OnlineCalculator
                 response = MapObject(false, message, inputValue, currentMemoryData, 0, calcHistory);
             }
 
-
             else if (memoryIndicator.Contains("+"))
             {
                 if (hasMemoryInfo())
@@ -113,9 +112,7 @@ namespace OnlineCalculator
                   
                     var currentMemoryData = Convert.ToDouble(inputValue);
                     response = MapObject(true, MessageType.Success.ToString(), inputValue, currentMemoryData, Convert.ToDouble(inputValue), calcHistory);
-                }
-                 
-                             
+                }                        
                 
             }
             else if (memoryIndicator.Contains("-"))
@@ -134,7 +131,6 @@ namespace OnlineCalculator
 
                     response = MapObject(true, MessageType.Success.ToString(), inputValue, currentMemoryData, Convert.ToDouble(inputValue), calcHistory);
                 }
-
             }
 
             else
