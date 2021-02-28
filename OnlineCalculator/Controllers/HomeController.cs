@@ -39,8 +39,7 @@ namespace OnlineCalculator.Controllers
                 ViewBag.memoryData = service.MemoryResult == 0 ? string.Empty:service.MemoryResult.ToString();
                 ViewBag.result = service.EquationResult.ToString();
                 ViewBag.calcHistoryInfo = service.CalcHistory;
-
-               
+                
                 return View();
             }
             else
@@ -65,7 +64,6 @@ namespace OnlineCalculator.Controllers
  
         public IActionResult Privacy()
         {
-            ViewBag.result = "Yes";
             return View();
         }
 
