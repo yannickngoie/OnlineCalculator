@@ -48,9 +48,7 @@ namespace OnlineCalculator.Controllers
                 if (service.Message == MessageType.MissingValue.ToString() && service.Result == false)
                 {
                     ViewBag.memoryData = service.MemoryResult == 0 ? string.Empty : service.MemoryResult.ToString();
-
                     ViewBag.flag = 0;
-
                     ViewBag.calcHistoryInfo = service.CalcHistory;
                 }
 
@@ -60,8 +58,6 @@ namespace OnlineCalculator.Controllers
             }          
         }
 
-
- 
         public IActionResult Privacy()
         {
             return View();
