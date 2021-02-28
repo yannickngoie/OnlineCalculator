@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    @RenderBody()
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"
+            integrity="sha256-Xxq2X+KtazgaGuA2cWR1v3jJsuMJUozyIXDB3e793L8="
+            crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        var currentMemorydata = document.getElementById("#memorytxt");
+        console.log("Current Memory data " + currentMemorydata);
+
+        $(function () {
+
+
+            $("#txt").keypress(function (e) {
+                if (String.fromCharCode(e.keyCode).match(/[^0-9+-/*]/g)) return false;
+            });
+            $("#txt").height("40px").width("312px");
+            $("#b0").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("0");
+                } else {
+                    $("#txt").val(x + "0")
+                }
+            });
+            $("#b1").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("1");
+                } else {
+                    $("#txt").val(x + "1")
+                }
+            });
+            $("#b2").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("2");
+                } else {
+                    $("#txt").val(x + "2")
+                }
+            });
+            $("#b3").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("3");
+                } else {
+                    $("#txt").val(x + "3")
+                }
+            });
+            $("#b4").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("4");
+                } else {
+                    $("#txt").val(x + "4")
+                }
+            });
+            $("#b5").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("5");
+                } else {
+                    $("#txt").val(x + "5")
+                }
+            });
+            $("#b6").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("6");
+                } else {
+                    $("#txt").val(x + "6")
+                }
+            });
+            $("#b7").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("7");
+                } else {
+                    $("#txt").val(x + "7")
+                }
+            });
+            $("#b8").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("8");
+                } else {
+                    $("#txt").val(x + "8")
+                }
+            });
+            $("#b9").click(function () {
+                var x = document.getElementById("txt").value;
+                if (x == "0") {
+                    $("#txt").val("9");
+                } else {
+                    $("#txt").val(x + "9")
+                }
+            });
+            $("#div").click(function () {
+                var x = document.getElementById("txt").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") { } else {
+                    $("#txt").val(x + "/")
+                }
+            });
+            $("#multy").click(function () {
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") { } else {
+                    $("#txt").val(x + "*")
+                }
+            });
+            $("#sub").click(function () {
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") { } else {
+                    $("#txt").val(x + "-")
+                }
+            });
+            $("#add").click(function () {
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var x = document.getElementById("txt").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") { } else {
+                    $("#txt").val(x + "+")
+                }
+            });
+            $("#dot").click(function () {
+                var x = document.getElementById("txt").value;
+                var y = x.slice(-1)
+                if (y == ".") { } else {
+                    $("#txt").val(x + ".")
+                }
+            });
+            $("#ce").click(function () {
+                var x = document.getElementById("txt").value;
+                $("#txt").val(x.substring(0, x.length - 1))
+            });
+
+            $("#m_clear").click(function () {
+                $("#memoryValue").val("");
+            });
+
+            $("#m_add").click(function () {
+
+                $("#memoryType").val("+")
+            });
+
+            $("#m_rem").click(function () {
+                $("#memoryType").val("-")
+
+            });
+
+            $("#m_rec").click(function () {              
+                var x = document.getElementById("memoryValue").value;
+                if (x != null) {
+                    $("#txt").val(x);
+                }
+               
+              
+            });
+
+            jQuery(document).on('click', '#c_history', function () {
+                console.log('clicked')
+                jQuery('.h_data').html('');
+                jQuery('#txtHistory').val('');
+            })
+            jQuery(document).on('click', '#c_memory', function () {
+                console.log('clicked 2')
+                jQuery('.memory_data').html('');
+                jQuery('#memoryValue').val('');
+
+            });
+        });
+
+    </script>
+    <style>
+        body {
+            background-image: url("Image/images.jpg");
+        }
+
+        #d1 {
+            /border: 1px solid black;
+            / height: 340px;
+            width: 800px;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .greyed {
+            background: #f1f0f0;
+        }
+
+        td input {
+            padding: 10px;
+            width: 100%;
+            background: none;
+        }
+
+        .table td, .table th {
+            border: 1px solid #dee2e6;
+            text-align: center;
+            padding: 0;
+        }
+
+        #memory_data {
+            position: relative;
+            width: 250px;
+            border: 1px solid #dee2e6;
+        }
+
+        .table--data {
+            display: flex;
+        }
+
+        #data_history {
+            position: relative;
+            width: 250px;
+            border: 1px solid #dee2e6;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .memory_data_clear,
+        .history_data_clear {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+        }
+
+            .memory_data_clear a,
+            .history_data_clear a {
+                background: #03084b;
+                color: #fff !important;
+                padding: 5px 15px;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+        h4 {
+            padding-bottom: 8px;
+            font-weight: 100;
+            border-bottom: 1px solid #dee2e6;
+            padding-top: 10px;
+        }
+    </style>
+    <br /><br /><br /><br /><br /><br /><br />
+    <center>
+        <div id="d1">
+            @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+        <div class="table--data">
+            <table class="table">
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2>My Calculator</h2>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="height: 50px">
+                        @Html.TextBox("txt", (string)ViewBag.result)
+                    </td>
+                    <td colspan="4">@Html.Hidden("memoryType")</td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="m_clear" value="MC" class="greyed" /></td>
+                    <td><input type="submit" id="m_add" value="M+" class="greyed" /></td>
+                    <td><input type="submit" id="m_rem" value="M-" class="greyed" /></td>
+                    <td><input type="button" id="m_rec" value="MR" class="greyed" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b7" value="7"></td>
+                    <td><input type="button" id="b8" value="8" /></td>
+                    <td><input type="button" id="b9" value="9" /></td>
+                    <td><input type="button" id="div" value="/" class="greyed" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b4" value="4" /></td>
+                    <td><input type="button" id="b5" value="5" /></td>
+                    <td><input type="button" id="b6" value="6" /></td>
+                    <td><input type="button" id="multy" class="greyed" value="*" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b1" value="1" /></td>
+                    <td><input type="button" id="b2" value="2" /></td>
+                    <td><input type="button" id="b3" value="3" /></td>
+                    <td><input type="button" id="sub" class="greyed" value="-" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b0" value="0" /></td>
+                    <td><input type="button" id="dot" class="greyed" value="." /></td>
+                    <td><input type="button" id="add" class="greyed" value="+" /></td>
+                    <td><input type="submit" id="eq" class="greyed" value="=" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" id="ce" value="CE" />
+                    </td>
+                    <td colspan="2">
+                        <input type="reset" id="re" value="Clear" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2>Result : @ViewBag.result</h2>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+            <div id="memory_data">
+                <div class="memory_list">
+                    <h4>Memory</h4>
+                    <div class="m_data">
+                        <ul>
+                            @Html.TextBox("memoryValue", (string)ViewBag.memoryData)
+                        </ul>
+                    </div>
+                </div>
+                <div class="memory_data_clear"> <a id="c_memory">Clear</a> </div>
+            </div>
+            <div id="data_history">
+                <div class="history_list">
+                    <h4>History</h4>
+                    <div class="h_data">
+                        <ul>
+                          @Html.Raw(ViewBag.calcHistoryInfo)
+                        </ul>
+                    </div>
+                </div>
+                <div class="history_data_clear"> <a id="c_history">Clear</a> </div>
+            </div>
+            <div id="hidden_history"> @Html.Hidden("txtHistory", (string)ViewBag.calcHistoryInfo)</div>
+        </div>            }
+        </div>
+    </center>
+    @if (@ViewBag.flag == 0) { <script> alert('Missing the right value.'); </script>
+    }
+
+</body>
+</html>
